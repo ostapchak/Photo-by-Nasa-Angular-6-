@@ -1,0 +1,17 @@
+<div id="sorting">
+  <button mat-button (click)="sortByName()">Sort by name</button>
+  <button mat-button (click)="sortByPrice()">Sort by price</button>
+</div>
+<div class="grid-container">
+  <mat-card class=" grid-item" *ngFor="let item of photos, let i = index">
+    <img mat-card-image src="{{item.img_src}}" alt="Photo by NASA">
+    <mat-card-content>
+      <mat-card-title>{{item.camera.name}}</mat-card-title>
+      <mat-card-subtitle>{{item.camera.full_name}}</mat-card-subtitle>
+    </mat-card-content>
+    <mat-card-actions>
+      <app-modal [photoItem]="item"></app-modal>
+      <button mat-button (click)="deleteItem(i)">Delete</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

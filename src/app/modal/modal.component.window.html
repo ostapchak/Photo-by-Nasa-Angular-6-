@@ -1,0 +1,14 @@
+<div mat-dialog-content>
+    <form class="example-form">
+        <mat-card-header>
+            Edit description:
+        </mat-card-header>
+        <mat-form-field>
+            <textarea matInput [(ngModel)]="data.description" name="descriptionArea"></textarea>
+        </mat-form-field>
+        <div mat-dialog-actions>
+            <button mat-raised-button (click)="onCancelClick()">Cancel</button>
+            <button mat-raised-button [mat-dialog-close]="data.description" >Ok</button>
+        </div>
+    </form>
+</div>
